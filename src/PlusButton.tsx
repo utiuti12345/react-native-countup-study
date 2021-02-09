@@ -1,5 +1,6 @@
 import React from "react";
 import {StyleSheet, Text, TouchableOpacity} from "react-native";
+import Button from "./components/Button";
 
 const styles = StyleSheet.create({
     button: {
@@ -25,9 +26,5 @@ export default function PlusButton(props: Props) {
     const addCounter = React.useCallback(() => {
         setCounter(count + 1);
     }, [count, setCounter]);
-    return (
-        <TouchableOpacity style={styles.button} onPress={addCounter}>
-            <Text style={styles.buttonText}>+</Text>
-        </TouchableOpacity>
-    )
+    return (<Button disabled={false} label="+" onPress={addCounter} />)
 }

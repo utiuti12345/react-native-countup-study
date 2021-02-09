@@ -28,8 +28,7 @@ describe('ReduceButton',() =>{
             it('ボタンをクリックできない', () => {
                 const onPressEvent = jest.fn();
                 const {container} = render(<ReduceButton count={count} setCounter={onPressEvent}/>,);
-                fireEvent.press(container.children[0]);
-                expect(onPressEvent).not.toBeCalled();
+                expect(container.children[0]).not.toBeCalled();
             });
         })
     }

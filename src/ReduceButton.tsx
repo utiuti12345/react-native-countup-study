@@ -1,5 +1,6 @@
 import React from "react";
 import {StyleSheet, Text, TouchableOpacity} from "react-native";
+import Button from "./components/Button";
 
 const styles = StyleSheet.create({
     button: {
@@ -25,9 +26,5 @@ export default function ReduceButton(props:Props) {
     const reduceCounter = React.useCallback(() => {
         setCounter(count - 1);
     }, [count,setCounter]);
-    return(
-        <TouchableOpacity style={styles.button} onPress={reduceCounter} disabled={count <= 0}>
-            <Text style={styles.buttonText}>-</Text>
-        </TouchableOpacity>
-    )
+    return(<Button disabled={count <= 0} label="-" onPress={reduceCounter} />)
 }
